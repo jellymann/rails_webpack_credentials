@@ -6,10 +6,15 @@ The secret sauce is in the [webpack loader](config/webpack/loaders/credentials/l
 const API_KEY = $$RailsCredentials.some_api_key;
 ```
 
+```yaml
+# credentials.yml
+some_api_key: XXX-00000-YYY
+```
+
 becomes:
 
 ```javascript
-const API_KEY = "SOME_API_KEY";
+const API_KEY = "XXX-00000-YYY";
 ```
 
 Usage can be seen in [application.js](app/javascript/packs/application.js#L18-L19). It supports nested keys, and it just JSON stringifies whatever you ask for, so if you get an object back you'll get an object.
